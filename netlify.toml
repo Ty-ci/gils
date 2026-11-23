@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# The Next.js runtime for Netlify: it maps the App Router's routes, the
+# `/api/content` route handler and the static assets onto Netlify's own
+# primitives, so no redirects or functions have to be declared here.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

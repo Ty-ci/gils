@@ -1,0 +1,34 @@
+.claude
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+node_modules
+*.local
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# Netlify CLI working directory (build output, local state)
+.netlify
+
+# typescript
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
