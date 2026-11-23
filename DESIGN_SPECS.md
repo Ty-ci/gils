@@ -1,10 +1,10 @@
 # N-SLSK infoweb — design system specification
 
 The visual language for the internal infoweb of the Náčelníctvo Slovenského skautingu. Its readers
-are the Náčelníctvo, the Ústredie and the support teams. Everything new on the site (everything
-outside `/archiv`) is built from this document. The implementation lives in
-[`src/app/(web)/web.css`](<src/app/(web)/web.css>) (tokens) and
-[`src/app/(web)/_components/`](<src/app/(web)/_components/>) (primitives). If the code and this
+are the Náčelníctvo, the Ústredie and the support teams. Everything on the site is built
+from this document. The implementation lives in
+[`src/app/globals.css`](src/app/globals.css) (tokens) and
+[`src/app/_components/`](src/app/_components/) (primitives). If the code and this
 document disagree, fix one of them; don't let them drift.
 
 **Sources.** The design follows **[snem.skauting.sk](https://snem.skauting.sk/)** (the newest and
@@ -147,7 +147,7 @@ Don't add a second face. snem's italic Bellota is not carried over.
 
 ## 6. Components
 
-Every component lives in `src/app/(web)/_components/` (shared) or in a route's own `_components/`
+Every component lives in `src/app/_components/` (shared) or in a route's own `_components/`
 (page-specific). Anatomy → variants → states → Tailwind.
 
 ### 6.1 Site header
@@ -239,8 +239,8 @@ a custom glyph reliably, so the marker is a `before:` pseudo-element in yellow, 
 - **Inline alert:** `rounded-card p-4`, an icon + text. Tones `info` (`bg-blue-tint`), `warn`
   (`bg-yellow-tint`), `error` (`bg-[#fde8e8] text-[#8a1c1c]`).
 - **Placeholder banner** (page-level): full width, `bg-yellow text-navy`, `py-2.5`, 14px / 600,
-  centred, with a ⚠ icon. Rendered by the root layout **above the header** on every infoweb page
-  (not in the archive), sticky together with the header. `role="note"`. Use it
+  centred, with a ⚠ icon. Rendered by the root layout **above the header** on every page,
+  sticky together with the header. `role="note"`. Use it
   on any page whose content is mock, a draft or not yet verified. **Never dismissible**: the warning
   must survive a screenshot.
 
@@ -372,7 +372,7 @@ Switch between views of the same thing (a checklist and its history) without lea
 
 ## 11. Tailwind tokens
 
-These are mirrored in [`src/app/(web)/web.css`](<src/app/(web)/web.css>). Tailwind v4 is
+These are mirrored in [`src/app/globals.css`](src/app/globals.css). Tailwind v4 is
 configured in CSS; there is no `tailwind.config`.
 
 ```css

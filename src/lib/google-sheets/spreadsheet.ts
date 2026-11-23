@@ -1,13 +1,12 @@
-// The one spreadsheet behind the whole site. Its tabs: `otazky` and `eventy`
-// (archive), `onboarding` (the checklist), `vyzvy` (open calls), `changelog`
-// and `keys` (passwords, see
-// `src/lib/access/`).
+// The one spreadsheet behind the whole site. Today its only tab the site reads
+// is `keys` (passwords, see `src/lib/access/`); content tabs get added as pages
+// that need them are built.
 
 import 'server-only'
 
 import { cleanEnv, getTabIds } from '@/lib/google-sheets/client'
 
-const DEFAULT_SPREADSHEET_ID = '1tPsKzTG5HsgUTo_j58fy2oiBxCvrqp3PQx1CX6T2zcA'
+const DEFAULT_SPREADSHEET_ID = '1vVcYRy208UJyqAWzEGkoeDn2bs6qb7SG4KMfYOvmljs'
 
 /** Overridable through `GOOGLE_SHEET_ID`, so a copy can be used in dev. */
 export const spreadsheetId = (): string =>

@@ -3,16 +3,15 @@
 // The browser half of the password gate: remembers entered passwords in
 // localStorage, and decides per path whether to show the page (or allow
 // changes), check a stored password with the server, or ask for one. The look
-// is up to each site — see the `AccessGate` components of the infoweb and the
-// archive, the infoweb's `EditUnlock`, and its `AccessMenu` (who's signed in
-// with what, and signing out).
+// is in `src/app/_components`: `AccessGate`, `EditUnlock`, and `AccessMenu`
+// (who's signed in with what, and signing out).
 
 import { useEffect, useState, useSyncExternalStore } from 'react'
 
 import { verifyAccess } from '@/lib/access/actions'
 import { accessFor, type AccessKey, accessKeys, editAccessFor, isAccessKey } from '@/lib/navigation'
 
-const storageKey = (key: AccessKey) => `nslsk:access:${key}`
+const storageKey = (key: AccessKey) => `gils:access:${key}`
 
 // Kept in memory too: localStorage can be blocked (private windows, strict
 // settings), and the session should still work then — just not persist.

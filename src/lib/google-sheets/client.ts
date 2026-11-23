@@ -185,7 +185,7 @@ export const getTabIds = async (spreadsheetId: string): Promise<Map<string, numb
 }
 
 /**
- * Overwrites one A1 range (`onboarding!H12`) with the given rows. Values are
+ * Overwrites one A1 range (`content!B4`) with the given rows. Values are
  * entered as if typed, so `TRUE` lands as a boolean and keeps a checkbox cell a
  * checkbox. Needs the service account to be an Editor of the spreadsheet.
  */
@@ -214,7 +214,7 @@ export const updateValues = async (
 }
 
 /**
- * Adds rows under the last filled row of a table (`changelog!A:D`). Values are
+ * Adds rows under the last filled row of a table (`log!A:D`). Values are
  * entered as if typed, so `2026-10-14 10:32:05` lands as a real date.
  */
 export const appendValues = async (

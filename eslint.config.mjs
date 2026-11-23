@@ -10,21 +10,10 @@ export default [
     ],
   }),
   // https://github.com/bratislava/eslint-config/blob/main/packages/next/README.md#tailwind-css
-  // Two sites, two stylesheets: the new infoweb by default, and the archived
-  // candidacy site checked against its own tokens.
   {
     settings: {
       'better-tailwindcss': {
-        entryPoint: './src/app/(web)/web.css',
-        callees: ['cx', 'classnames', 'clsx', 'cn', 'twMerge', 'tw'],
-      },
-    },
-  },
-  {
-    files: ['src/app/archiv/kandidatka2026/**'],
-    settings: {
-      'better-tailwindcss': {
-        entryPoint: './src/app/archiv/kandidatka2026/archive.css',
+        entryPoint: './src/app/globals.css',
         callees: ['cx', 'classnames', 'clsx', 'cn', 'twMerge', 'tw'],
       },
     },
@@ -38,12 +27,9 @@ export default [
 
       'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
 
-      // The two images on the site are an inline SVG mark and a Google Drive
-      // thumbnail with an onError fallback — neither gains from `next/image`.
-      '@next/next/no-img-element': 'off',
 
-      // The site is Slovak-only and has no i18n layer: the copy that isn't in
-      // `_data/content.ts` is written straight into the markup, on purpose.
+      // The site is Slovak-only and has no i18n layer: copy is written straight
+      // into the markup, on purpose.
       'i18next/no-literal-string': 'off',
 
       // Good rules that tend to need cleanup work — kept as warnings

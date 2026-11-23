@@ -20,14 +20,14 @@ export const accessKeyInfo: Record<AccessKey, { label: string; description: stri
   },
   'whole-web-edit': {
     label: 'Úpravy',
-    description: 'Odškrtávaš checklist a vidíš koncepty a kontrolu výziev.',
+    description: 'Upravuješ obsah webu.',
   },
 }
 
 type Route = {
   path: string
   label: string
-  /** Shown in the infoweb's header menu. */
+  /** Shown in the header menu. */
   inNav: boolean
   /** The key to unlock the route and everything under it; `null` is public. */
   access: AccessKey | null
@@ -35,29 +35,12 @@ type Route = {
   edit: AccessKey
 }
 
+/**
+ * A new page goes here. A locked one, for example:
+ *   { path: '/interne', label: 'Interné', inNav: true, access: 'whole-web-view', edit: 'whole-web-edit' }
+ */
 export const ROUTES: Route[] = [
   { path: '/', label: 'Domov', inNav: true, access: null, edit: 'whole-web-edit' },
-  {
-    path: '/onboarding',
-    label: 'Onboarding',
-    inNav: true,
-    access: 'whole-web-view',
-    edit: 'whole-web-edit',
-  },
-  {
-    path: '/vyzvy',
-    label: 'Otvorené výzvy',
-    inNav: true,
-    access: 'whole-web-view',
-    edit: 'whole-web-edit',
-  },
-  {
-    path: '/archiv/kandidatka2026',
-    label: 'Archív',
-    inNav: false,
-    access: 'whole-web-view',
-    edit: 'whole-web-edit',
-  },
 ]
 
 /**
